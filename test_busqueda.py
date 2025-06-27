@@ -10,7 +10,7 @@ options = Options()
 options.add_argument("--headless=new")  # o "--headless" según la versión
 options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 driver.get("https://duckduckgo.com/")
 # Buscar campo de texto
 buscador = driver.find_element(By.NAME, "q")
