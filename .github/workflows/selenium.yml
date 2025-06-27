@@ -23,7 +23,7 @@ jobs:
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 137
-          install-chromedriver: true
+          # install-chromedriver: true
 
       - name: Install dependencies
         run: |
@@ -32,6 +32,6 @@ jobs:
 
       - name: Run tests
         run: |
-          export CHROME_PATH=$(which chrome)
-          export CHROMEDRIVER_PATH=$(which chromedriver)
+          # export CHROME_PATH=$(which chrome)
+          # export CHROMEDRIVER_PATH=$(which chromedriver)
           pytest -v test_busqueda.py
