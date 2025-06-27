@@ -1,7 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+import tempfile
 import time
+
+
+options = Options()
+options.add_argument("--headless=new")  # o "--headless" según la versión
+options.add_argument(f"--user-data-dir={tempfile.mkdtemp()}")
 
 driver = webdriver.Chrome()
 driver.get("https://duckduckgo.com/")
